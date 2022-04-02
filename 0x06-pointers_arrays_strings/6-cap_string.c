@@ -1,52 +1,34 @@
 #include "main.h"
+
 /**
- *cap_string - convert lowercase to uppercase letters
- *by subtracting 32 from the ASCII values if they are
- *lowercase letters.
- *@str: source
- *Return: str.
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
+ * Return: the resulting string
  */
-
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int i = 0, j = 0;
+	int i, j;
 
-	while (str[i] != '\0')
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		i++;
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
+
+		for (j = 0; j < 13; j++)
+		{
+			if (s[i] == spe[j])
+			{
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
+			}
+		}
 	}
 
-
-	while (j < i)
-	{
-		if (str[j] == ' ' && str[j + 1] >= 'a' && str[j + 1] <= 'z')
-		{
-			str[j + 1] = str[j + 1] - 32;
-		}
-
-		else if (str[j] == '\n' && str[j + 1] >= 'a' && str[j + 1] <= 'z')
-		{
-			str[j + 1] = str[j + 1] - 32;
-		}
-
-		else if (str[j] == '\t' && str[j + 1] >= 'a' && str[j + 1] <= 'z')
-		{
-			str[j + 1] = str[j + 1] - 32;
-		}
-
-		else if (str[j] == '.' && str[j + 1] >= 'a' && str[j + 1] <= 'z')
-		{
-			str[j + 1] = str[j + 1] - 32;
-		}
-
-		else
-		{
-			str[j] = str[j];
-		}
-
-		j++;
-
-	}
-
-	return (str);
+	return (s);
 }

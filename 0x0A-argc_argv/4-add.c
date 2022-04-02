@@ -1,50 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
-
-/**
- *main: function
- *@argc - argument count
- *@argv: argument value
- *description: prints an argument name
- *Return: 0.
- */
-
-int main (int argc, char *argv[])
-{
-	int i = 0, j = 0;
-
-
-	if (argc < 2)
-	{
-		printf("%s\n", "0");
-	}
-
-
-	if (argc > 2)
-	{
-
-	for (i = 1; i < argc; i++)
-	{
-
-		if (argv[i] >= '1' && argv[i] <= "1000")
-		{
-			printf("%d\n", j + atoi(argv[i]));
-
-		}
-
-		else
-		{
-			printf("%d\n", 0);
-		}
-
-		i++;
-	}
-
-	}
-
-	return (0);
-=======
 #include <ctype.h>
 /**
 * numchecker - verifies if string has only numbers
@@ -89,5 +44,4 @@ sum += atoi(argv[i]);
 }
 printf("%d\n", sum);
 return (0);
->>>>>>> 347be9c9193ad2257f11c1826f608ed3f65c78c9
 }

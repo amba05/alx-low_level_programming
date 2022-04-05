@@ -14,18 +14,20 @@ char *_strdup(char *str)
 	unsigned int i = 0;
 	char *elem;
 
-	while (str[size] != '\0')
-	{
-		size++;
-	}
 
-	if (size == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 
+
 	else
 	{
+		while (str[size] != '\0')
+		{
+			size++;	
+		}
+
 		size = size + 1;
 		elem = (char *) malloc(size * sizeof(char));
 
@@ -34,6 +36,7 @@ char *_strdup(char *str)
 		elem[i] = str[i];
 		i++;
 	}
+
 	elem[size - 1] = '\0';
 	return (elem);
 	}

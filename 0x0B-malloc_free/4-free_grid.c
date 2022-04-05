@@ -4,15 +4,15 @@
 /**
  * free_grid - free alloted memory in the heap after
  * using malloc
+ *
  * @grid: a 2-D array
  * @height: the height of the array
- *
+ * Return - void.
  */
 
 void free_grid(int **grid, int height)
 {
 	int a = 0;
-
 
 	for (a = 0; a < height; a++)
 	{
@@ -21,4 +21,3 @@ void free_grid(int **grid, int height)
 
 	free(grid);
 }
-

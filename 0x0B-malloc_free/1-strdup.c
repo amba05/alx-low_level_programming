@@ -25,11 +25,14 @@ char *_strdup(char *str)
 	{
 		while (str[size] != '\0')
 		{
-			size++;	
+			size++;
 		}
 
 		size = size + 1;
 		elem = (char *) malloc(size * sizeof(char));
+
+		if (elem == NULL)
+			return (NULL);
 
 	while (i < size)
 	{

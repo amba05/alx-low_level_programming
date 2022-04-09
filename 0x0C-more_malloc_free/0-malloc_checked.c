@@ -9,7 +9,7 @@
 void *malloc_checked(unsigned int b)
 {
 	/*declare a pointer to be used*/
-	int *ptr;
+	void *ptr;
 	/*create memory spaces in heap*/
 	ptr = malloc(b);
 	/*if malloc doesn't create memory*/

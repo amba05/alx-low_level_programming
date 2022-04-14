@@ -1,29 +1,35 @@
+#include <stdio.h>
 #include "function_pointers.h"
-#include <stddef.h>
+
 /**
- * int_index - prints an integer
- * @array: pointer to an array of integers
- * @size: the size of the array
- * @cmp: pointer to function / function pointer
- *
- * Return: an integer..
- */
+ * int_index - funcrion that searches for an integer.
+ * @array: Name passed
+ * @size: Number of iterations
+ * @cmp: Points to a function
+ * Return: Returns nothing
+**/
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i;
+int i;
 
-	if (size <= 0)
-		return (-1);
+if (array == NULL || cmp == NULL)
+{
+return (-1);
+}
 
-	for (i = 0; i < size; i++)
-	{
-		if (cmp(array[i]))
-			return (i);
-	}
+if (size <= 0)
+{
+return (-1);
+}
 
-	if (i == 20)
-		return (-1);
+for (i = 0; i < size; i++)
+{
+if (cmp(array[i]))
+{
+return (i);
+}
+}
 
-	return (0);
+return (-1);
 }

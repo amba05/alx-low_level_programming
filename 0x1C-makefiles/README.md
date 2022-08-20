@@ -5,7 +5,8 @@ The C-Makefiles ease the means of running and compiling numerous files/program. 
 	E.g: `make -f 0-makefile`
 
 
-``` .PHONY: all clean oclean fclean re
+``` 
+.PHONY: all clean oclean fclean re
 
 CC = gcc  
 SRC = main.c school.c
@@ -26,8 +27,8 @@ oclean:
 
 fclean: clean oclean
 
-re: oclean all```
-
+re: oclean all
+```
 
 ## Resources
 - [Makefiles](https://opensource.com/article/18/8/what-how-makefile)
